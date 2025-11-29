@@ -1,5 +1,6 @@
 import { Snackbar, Alert } from '@mui/material';
-import { useState, createContext, useContext, ReactNode } from 'react';
+import { useState, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 
 type AlertColor = 'success' | 'info' | 'warning' | 'error';
 
