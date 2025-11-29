@@ -124,7 +124,15 @@ export const Board = () => {
       </Paper>
 
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Box sx={{ display: 'flex', gap: 2, overflowX: 'auto', pb: 2 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: 2,
+            overflowX: { md: 'auto' },
+            pb: 2
+          }}
+        >
           {(filter.status === 'all' || filter.status === 'todo') && (
             <Column
               title="To Do"

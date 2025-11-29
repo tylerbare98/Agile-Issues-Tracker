@@ -13,7 +13,16 @@ interface ColumnProps {
 
 export const Column = ({ title, status, issues, onEdit, onDelete }: ColumnProps) => {
   return (
-    <Paper sx={{ p: 2, width: 300, bgcolor: 'background.paper', border: '1px solid', borderColor: 'divider' }}>
+    <Paper
+      sx={{
+        p: 2,
+        width: { xs: '100%', md: 300 },
+        minWidth: { md: 300 },
+        bgcolor: 'background.paper',
+        border: '1px solid',
+        borderColor: 'divider'
+      }}
+    >
       <Typography variant="h6" gutterBottom>
         {title} ({issues.length})
       </Typography>
@@ -23,7 +32,7 @@ export const Column = ({ title, status, issues, onEdit, onDelete }: ColumnProps)
             ref={provided.innerRef}
             {...provided.droppableProps}
             sx={{
-              minHeight: 400,
+              minHeight: { xs: 200, md: 400 },
               bgcolor: snapshot.isDraggingOver ? 'action.hover' : 'transparent',
               borderRadius: 1,
               p: 1,
